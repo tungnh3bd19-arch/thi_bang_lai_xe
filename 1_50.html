@@ -119,6 +119,7 @@ function finishRound(){
   setNotice("retry",`<b>Vòng ${state.round} đã xong.</b> Còn ${wrong.length} câu sai. Đang chuyển sang vòng làm lại…`);
   setTimeout(()=>{state={round:state.round+1,active:wrong,answers:{},completed:false};saveState();transitionRunning=false;renderRound();},1100);
 }
+  
 function bindButtons(){document.querySelectorAll(".option-btn").forEach(btn=>btn.addEventListener("click",()=>chooseAnswer(Number(btn.dataset.q),btn.dataset.letter)));}
 async function fetchQuestionSource(){
   let lastError=null;
